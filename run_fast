@@ -1,0 +1,23 @@
+#!/bin/bash
+## This line is a comment, the following lines are for Moab
+#MOAB -l nodes=1:ppn=20
+#MOAB -l walltime=168:00:00
+#MOAB -N fast_test
+#MOAB -j oe
+
+#MSUB -l advres=b1002
+#MSUB -A b1002
+
+##### These are shell commands. Note that all MSUB commands come first.
+
+
+cd $PBS_O_WORKDIR
+module load gcc
+module load mpi
+module load python
+ulimit -s unlimited
+
+cd src
+python var_parser.py
+cd ../
+mpirun -np 15 fargo2D1D -ma in/fast_test.par > fast_test.out

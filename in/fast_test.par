@@ -1,0 +1,38 @@
+### Gas parameters
+  
+AspectRatio	0.1		H/r at r=1
+FlaringIndex    0.0		power of H/r
+Sigma0          0.00000246 	Constant Surface Density
+SigmaSlope      0.5		Slope of surface density profile
+AlphaViscosity       0.003	Uniform kinematic viscosity 
+  
+### Star and planet parameters
+  
+PlanetConfig		in/highmass.cfg
+ThicknessSmoothing		0.6
+ExcludeHill		Yes
+MassTaper              3
+### Grids parameters
+  
+Nrad            150             Number of rings in the 2D grid
+Nsec            250             Number of sectors
+Rmin		1.56		\ radial extension of 2D grid
+Rmax		15.6		/
+Rmin1D          0.01		\ radial extension of 1D grid
+Rmax1D          200.0		/
+
+InnerBoundary   NONREFLECTING	Should be NONREFLECTING
+RadialSpacing   L
+Disk            YES
+  
+Frame           F
+Transport	FARGO 
+
+### Outputs control parameters
+  
+OutputDir	out/fast_test3/		Don't forget the trailing slash
+Ntot		4000		Total number of time steps
+Ninterm        	2 		Time steps between outputs
+DT              6.28		Time step length = 1 orbit at r=1
+WriteVelocity   YES
+LabelAdvection  YES

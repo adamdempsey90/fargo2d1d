@@ -1,0 +1,43 @@
+### Gas parameters
+  
+AspectRatio	0.05		H/r at r=1
+FlaringIndex    0.0		power of H/r
+Sigma0          0.00001		Constant Surface Density
+SigmaSlope      0.5		Slope of surface density profile
+AlphaViscosity       0.003		Uniform kinematic viscosity
+ 
+  
+### Star and planet parameters
+  
+PlanetConfig		in/dk15_planet.cfg
+ThicknessSmoothing		0.6
+ExcludeHill		Yes
+MassTaper		6
+ReleaseDate             74505.0 
+ReleaseRadius           5.2 
+### Grids parameters
+  
+Nrad            251             Number of rings in the 2D grid
+Nsec            583             Number of sectors
+Rmin		1.56		\ radial extension of 2D grid
+Rmax		15.6		/
+Rmin1D          0.03999		\ radial extension of 1D grid
+Rmax1D          100.0		/
+
+InnerBoundary   NONREFLECTING	Should be NONREFLECTING
+RadialSpacing   L
+Disk            YES
+  
+OmegaFrame      0
+Frame           Fixed
+Transport	FARGO
+  
+
+### Outputs control parameters
+  
+OutputDir	out/dk15_low/		Don't forget the trailing slash
+Ntot		50000		Total number of time steps
+Ninterm         10		Time steps between outputs
+DT              6.28		Time step length = 1 orbit at r=1
+WriteVelocity   YES
+LabelAdvection  YES
